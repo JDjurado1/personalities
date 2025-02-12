@@ -53,36 +53,63 @@ export default function CharacterDisplay() {
         backgroundPosition: "center",
         fontFamily: "Times New Roman, serif",
         color: "white",
+        padding: "20px",
       }}
     >
       <div
         style={{
           backgroundColor: "rgba(0, 0, 0, 0.7)",
           borderRadius: "10px",
-          padding: "20px",
-          width: "600px", // Increased width
-          minHeight: "450px", // Maintains height even when hiding details
+          padding: "30px",
+          width: "80%", // Now takes 80% width of the screen
+          maxWidth: "1000px",
+          minHeight: "550px", // Increased height
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
         }}
       >
-        <h2>James Daniel Jurado</h2> {/* Your name at the top */}
-        <h1>{characters[index].name}</h1>
+        <h2 style={{ fontSize: "24px", marginBottom: "10px" }}>
+          James Daniel Jurado
+        </h2>{" "}
+        {/* Your name at the top */}
+        <h1 style={{ fontSize: "36px" }}>{characters[index].name}</h1>
 
         <div>
-          <button onClick={prevCharacter}>Back</button>
-          <button onClick={nextCharacter} style={{ marginLeft: "10px" }}>
+          <button
+            onClick={prevCharacter}
+            style={{
+              padding: "10px 20px",
+              fontSize: "16px",
+              marginRight: "10px",
+              cursor: "pointer",
+            }}
+          >
+            Back
+          </button>
+          <button
+            onClick={nextCharacter}
+            style={{
+              padding: "10px 20px",
+              fontSize: "16px",
+              cursor: "pointer",
+            }}
+          >
             Next
           </button>
         </div>
-        <p>({index + 1} of {characters.length})</p>
+        <p style={{ fontSize: "18px", marginTop: "10px" }}>
+          ({index + 1} of {characters.length})
+        </p>
 
         <button
           onClick={() => setShowDetails(!showDetails)}
           style={{
-            marginBottom: "10px",
+            padding: "8px 16px",
+            fontSize: "16px",
+            marginBottom: "15px",
+            cursor: "pointer",
           }}
         >
           {showDetails ? "Hide Details" : "Show Details"}
@@ -90,11 +117,14 @@ export default function CharacterDisplay() {
 
         <div
           style={{
-            height: "140px", // Keeps space even when hiding
+            height: "150px", // Increased space for text
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             textAlign: "justify",
+            fontSize: "18px",
+            lineHeight: "1.4",
+            maxWidth: "800px",
           }}
         >
           {showDetails && <p>{characters[index].description}</p>}
@@ -103,7 +133,12 @@ export default function CharacterDisplay() {
         <img
           src={characters[index].image}
           alt={characters[index].name}
-          style={{ width: "350px", borderRadius: "10px", marginTop: "10px" }}
+          style={{
+            width: "450px", // Increased size
+            height: "auto",
+            borderRadius: "10px",
+            marginTop: "20px",
+          }}
         />
       </div>
     </div>
