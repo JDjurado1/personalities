@@ -61,9 +61,9 @@ export default function CharacterDisplay() {
           backgroundColor: "rgba(0, 0, 0, 0.7)",
           borderRadius: "10px",
           padding: "30px",
-          width: "80%", // Now takes 80% width of the screen
+          width: "80%", 
           maxWidth: "1000px",
-          minHeight: "550px", // Increased height
+          minHeight: "550px", 
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -117,7 +117,7 @@ export default function CharacterDisplay() {
 
         <div
           style={{
-            height: "150px", // Increased space for text
+            height: "150px", 
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -134,7 +134,7 @@ export default function CharacterDisplay() {
           src={characters[index].image}
           alt={characters[index].name}
           style={{
-            width: "450px", // Increased size
+            width: "450px", 
             height: "auto",
             borderRadius: "10px",
             marginTop: "20px",
